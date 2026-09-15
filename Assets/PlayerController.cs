@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -42,11 +43,13 @@ public class PlayerController : MonoBehaviour
     {
         isGrounded = false;
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
+        Console.WriteLine(moveInput);
     }
 
     void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>().x;
+        Console.WriteLine(moveInput);
     }
 
     private void OnJump(InputValue value)
